@@ -8,4 +8,3 @@ class Migration(migrations.Migration):
     dependencies = [
         ('app', '0008_payment_orderplaced_delete_customer'),
     ]
-
