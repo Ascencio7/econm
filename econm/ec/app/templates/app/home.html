@@ -1,0 +1,313 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block title %}
+    Inicio
+{% endblock title%}
+
+
+{% block banner-slider %}
+
+<div style="top: 10px;" id="carouselExample">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static 'app/images/banner/baner.gif' %}" class="d-block w-100" alt="banner image">
+  </div>
+</div> <!-- Este es el div que cierra el contenedor del carrusel -->
+
+
+{% endblock banner-slider %}
+
+{% block information %}
+<div style="font-family: 'Times New Roman', Times, serif;" class="">
+  <br>
+    <div class="row bg-success text-center p-4 text-white border-bottom shadow">
+      <br>
+      <hr>
+        <small class="fs-5">
+          
+          <h1>Bienvenidos a VLADI STORE</h1><br>
+          <h5>Nos alegra tenerlos aquí en VLADI STRORE, el lugar donde los
+            sueños de todo jugador se hacen realidad. En nuestra tienda, encontrarán una 
+            amplia selección de productos para satisfacer todas sus necesidades gaming.</h5><hr>
+        </small>
+    </div>
+</div>
+{% endblock information %}
+
+{% block main-content %}
+    <div style="font-family: 'Times New Roman', Times, serif;" class="">
+        <br>
+        <h2 style="font-family: 'Times New Roman', Times, serif;" class="text-center">Productos Gamers</h2><hr>
+        <br><br>
+        <div class="row g-6">
+          
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="goodnesssec butterplay smbg">
+              <a href="{% url 'category' 'PS' %}">
+                <div class="goodnessseccont text-center">
+                  <img src="{% static 'app/images/product/p1.png' %}" class="img-fluid" alt=""/>
+                  <p class="playOne">PlayStation 1</p>
+                </div>
+              </a>
+            </div>
+          </div>
+              
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay smbg">
+                <a href="{% url 'category' 'PS' %}">
+                  <div class="goodnessseccont text-center">
+                    <img src="{% static 'app/images/product/p2.jpeg' %}" class="img-fluid" alt=""/>
+                    <p class="playOne">PlayStation 2</p>
+                  </div>
+                </a>
+              </div>
+            </div>  
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay smbg">
+                <a href="{% url 'category' 'PS' %}">
+                  <div class="goodnessseccont text-center">
+                    <img src="{% static 'app/images/product/p3.jpg' %}" class="img-fluid" alt=""/>
+                    <p class="playOne">PlayStation 3</p>
+                  </div>
+                </a>
+              </div>
+          </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay smbg">
+                <a href="{% url 'category' 'PS' %}">
+                  <div class="goodnessseccont text-center">
+                      <img src="{% static 'app/images/product/p4.jpg' %}" class="img-fluid" alt="">
+                      <p class="playOne">PlayStation 4</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="goodnesssec butterplay smbg">
+                  <a href="{% url 'category' 'PS' %}">
+                      <div class="goodnessseccont text-center">
+                          <img src="{% static 'app/images/product/p5.jpg' %}"  class="img-fluid" alt="">
+                          <p class="playOne">PlayStation 5</p>
+                      </div>
+                  </a>
+              </div>
+            </div>  
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay latop">
+                  <a href="{% url 'category' 'PC' %}">
+                    <div class="goodnessseccont text-center">
+                      <img src="{% static 'app/images/product/laptopHPVictus15.jpg' %}" class="img-fluid" alt="">
+                      <p class="laptops">HP Victus 15</p>
+                    </div>
+                  </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+                <div class="goodnesssec butterplay laptop">
+                  <a href="{% url 'category' 'PC' %}">
+                    <div class="goodnessseccont text-center">
+                    <img src="{% static 'app/images/product/laptopHPVictus16.jpg' %}" class="img-fluid" alt="">
+                    <p class="laptops">HP Victus 16</p>
+                    </div>
+                  </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+                <div class="goodnesssec butterplay laptop">
+                  <a href="{% url 'category' 'PC' %}">
+                    <div class="goodnessseccont text-center">
+                    <img src="{% static 'app/images/product/laptopLenovoLegion5.jpeg' %}" class="img-fluid" alt="">
+                    <p class="laptops">Lenovo Legion 5</p>
+                    </div>
+                  </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay laptop">
+                  <a href="{% url 'category' 'PC' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/laptopASUSTUF15GAMING.jpg' %}" class="img-fluid" alt="">
+                        <p class="laptops">ASUS TUF F-15 GAMING</p>
+                      </div>
+                  </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay laptop">
+                  <a href="{% url 'category' 'PC' %}">
+                    <div class="goodnessseccont text-center">
+                      <img src="{% static 'app/images/product/laptopASUSROG-G15.png' %}" class="img-fluid" alt="">
+                      <p class="laptops">ASUS ROG G15</p>
+                    </div>
+                  </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay games">
+                  <a href="{% url 'category' 'G' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/videojuegos-DarkSoul1-XBOX-360.jpg' %}" class="img-fluid" alt="">
+                        <p class="videojuegos">Dark Soul I</p>
+                      </div>
+                  </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay games">
+                  <a href="{% url 'category' 'G' %}">
+                    <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/videojuegos-GodOfWar2-PS2.jpeg' %}" class="img-fluid" alt="">
+                        <p class="videojuegos">God Of War 2</p>
+                    </div>
+                  </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay games">
+                  <a href="{% url 'category' 'G' %}">
+                    <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/videojuegos-GodOfWar4-PS4.jpg' %}" class="img-fluid" alt="">
+                        <p class="videojuegos">God Of War 4</p>
+                    </div>
+                  </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay games">
+                  <a href="{% url 'category' 'G' %}">
+                    <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/videojuegos-MassEffect3-PS3.jpg' %}" class="img-fluid" alt="">
+                        <p class="videojuegos">Mass Effect 3</p>
+                    </div>
+                  </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay games">
+                  <a href="{% url 'category' 'G' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/videojuegos-ResidentEvil4Remake-PS4.jpg' %}" class="img-fluid" alt="">
+                        <p class="videojuegos">Resident Evil 4 Remake</p>
+                      </div>
+                  </a>
+              </div>
+            </div>  
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay games">
+                  <a href="{% url 'category' 'G' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/videojuegos-SilentHill-PS1.jpg' %}" class="img-fluid" alt="">
+                        <p class="videojuegos">Silent Hill</p>
+                      </div>
+                  </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay games">
+                  <a href="{% url 'category' 'G' %}">
+                    <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/videojuegos-Spiderman-PS5.jpg' %}" class="img-fluid" alt="">
+                        <p class="videojuegos">SpiderMan</p>
+                    </div>
+                  </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay games">
+                  <a href="{% url 'category' 'G' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/videojuegos-ZELDA-Nintendo.jpg' %}" class="img-fluid" alt="">
+                        <p class="videojuegos">The Legend of Zelda: Breath of the Wild</p>
+                      </div>
+                  </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay mando">
+                  <a href="{% url 'category' 'M' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/mandoPS1.jpg' %}" class="img-fluid" alt="">
+                        <p class="mandos">Mando para PlayStation 1</p>
+                      </div>
+                  </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay mando">
+                  <a href="{% url 'category' 'M' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/mandoPS2.jpg' %}" class="img-fluid" alt="">
+                        <p class="mandos">Mando para PlayStation 2</p>
+                      </div>
+                  </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay mando">
+                  <a href="{% url 'category' 'M' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/mandoPS3.jpeg' %}" class="img-fluid" alt="">
+                        <p class="mandos">Mando para PlayStation 3</p>
+                      </div>
+                  </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay mando">
+                  <a href="{% url 'category' 'M' %}">
+                    <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/mandoPS4.jpeg' %}" class="img-fluid" alt="">
+                        <p class="mandos">Mando para PlayStation 4: Edición God Of War Ragnarock</p>
+                    </div>
+                  </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="goodnesssec butterplay mando">
+                  <a href="{% url 'category' 'M' %}">
+                      <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/mandoPS1.jpg' %}" class="img-fluid" alt="">
+                        <p class="mandos">Mando para PlayStation 5</p>
+                      </div>
+                  </a>
+              </div>
+              <br>
+              
+              <br>
+              <br>
+    <hr>
+    </div>
+        <br/><br>
+{% endblock main-content %}

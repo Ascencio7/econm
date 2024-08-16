@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/footer.css' %}" />
+    <!--Este link es para los iconos de las redes sociales-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <title>VLADI STORE  | {% block title %}{% endblock title %} </title>
+
+
+  </head>
+  <body>
+   
+    <nav  class="navbar navbar-expand-lg navbar-dark" style="background-color: darkcyan; font-family: 'Times New Roman', Times, serif;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'app/images/banner/logo.png' %}" width="70" height="70"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            </li>
+      
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Productos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'category' 'PS'%}">PlayStation</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'PC'%}">Latops</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'G'%}">Videojuegos</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'M'%}">Mandos</a></li>
+
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'about' %}">Nosotros</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'contact' %}">Contactános</a>
+            </li>
+ 
+          <form class="d-flex" role="search" action="/search">
+            <input class="form-control mx-2"  type="search" placeholder="Buscar" name="search" aria-label="Search">
+            <button class="btn btn-outline-dark text-white" type="submit">Buscar</button>
+          </form>
+        </div>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Opciones</a>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" href="{% url 'profile' %}">Perfil</a></li>
+              <!--<li><a class="dropdown-item" href="{% url 'orders' %}">Ordenes</a></li>-->
+              <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Cambiar contraseña</a></li>
+              <li>
+                <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                  {% csrf_token %}
+                </form>
+                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Cerrar Sesión
+                </a>  
+
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item mx-5">
+            <a href="{% url 'showcart' %}" class="nav-link text-white"><span class="badge bg-danger">{% if totalitem > 0 %} {{totalitem}} {% endif %} </span> Carro de Compras</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="#" class="nav-link text-white"><span class="badge bg-danger">{% if wishitem > 0 %} {{wishitem}} {% endif %}</span><i class="fa fa-heart"></i> </a>
+          </li>
+          {% else %}
+          <li class="nav-item mx-2">
+            <a href="{% url 'login' %}" class="nav-link text-white">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registrarse</a>
+          </li>
+          {% endif %}
+        </ul>
+
+      </div>
+    </nav>
+
+
+    {% block banner-slider %}{% endblock banner-slider %}
+
+    {% block information %}{% endblock information %}
+
+    {% block main-content %}{% endblock main-content %}
+
+    {% block payment-gateway %} {% endblock payment-gateway %}
+
+
+    
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <img src="{% static 'app/images/banner/logo.png' %}" alt="">
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>SOBRE NOSOTROS</h2>
+          <p>
+            Nuestra misión es ser la mejor opción para comprar y vender videojuegos y tecnología,<br> 
+            ofreciendo un producto de alta calidad y un servicio de alta calidad.<br>Nuestro objetivo es satisfacer 
+            las necesidades de nuestros clientes y ayudarlos a encontrar la <br>mejor oferta en el mercado.
+          </p>
+        </div>
+        <div class="box">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+           <a href="#">
+            <i class='bx bxl-facebook-circle'></i>
+           </a>
+           <a href="#">
+            <i class='bx bxl-instagram-alt' ></i>
+           </a>
+           <a href="#">
+            <i class='bx bxs-envelope' ></i>
+           </a>
+           <a href="#">
+            <i class='bx bxs-phone' ></i>
+           </a>
+           <a href="#">
+            <i class='bx bx-directions' ></i>
+           </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grupo-2">
+        <small>2024 <b>Vladimir Ascencio</b> Derechos Reservados</small>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+
+    <script src="{% static 'app/js/owl.carousel.min.js' %} "></script>
+    <script src="{% static 'app/js/all.min.js' %}" ></script>
+    <script src="{% static 'app/js/myscript.js' %}" ></script>
+
+
+  </body>
+</html>

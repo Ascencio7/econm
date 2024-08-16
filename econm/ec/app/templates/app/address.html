@@ -1,0 +1,43 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Dirección{% endblock title %}
+
+{% block main-content %}
+ 
+<div class=" my-3 my-6">
+    <div class="row">
+        <h3 style="font-family: 'Times New Roman', Times, serif;">Bienvenido <span class="text-capitalize">
+            {{request.user}}</span> </h3>
+    
+
+    <div class="col-sm-2 border-end">
+        <ul class="list-unstyled">
+            <li class="d-grid"><a href="{% url 'profile' %}" class="btn">Perfil</a></li>
+            <li class="d-grid"><a href="{% url 'address' %}" class="btn btn-primary">Dirección</a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="col-sm-9 offset-sm-1">
+        <div class="row">
+            {% for ad in add %}
+                <div style="font-family: 'Times New Roman', Times, serif;" class="col-sm-6">
+                    <div class="card m-2">
+                        <div class="card-body">
+                            <h3>Dirección {{forloop.counter}}</h3>
+                            <p>Nombre: {{ad.nombre}}</p>
+                            <p>Localidad: {{ad.localidad}}</p>
+                            <p>Ciudad: {{ad.ciudad}}</p>
+                            <p>Telefóno: {{ad.telefono}}</p>
+                            <p>Departamento: {{ad.departamento}}</p>
+                            <p class="text-center"><a href="{% url 'updateAddress' pk=ad.id%}" type="button" class="btn btn-success" >Modificar</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock main-content %}

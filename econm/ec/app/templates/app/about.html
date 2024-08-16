@@ -1,0 +1,48 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}¿Quiénes Somos?{% endblock title %}
+
+
+{% block banner-slider %}
+<div id="carouselExample">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static 'app/images/banner/baner.gif' %}" class="d-block w-100" alt="banner image">
+  </div>
+</div> <!-- Este es el div que cierra el contenedor del carrusel -->
+{% endblock banner-slider %}
+
+
+
+
+{% block main-content %}
+
+    <br>
+    <h2 style="font-family: 'Times New Roman', Times, serif;" class="text-center">Acerca de Nosotros</h2>
+    <br>
+    <div style="font-family: 'Times New Roman', Times, serif;" class="text-center">
+        <h5>
+                VLADI STORE es tu tienda de confianza para todo lo relacionado con el mundo de 
+                los videojuegos y la tecnología.<br> Desde nuestra 
+                humildes raíces hasta convertirnos en una referencia en el mercado, 
+                hemos mantenido una misión clara: <br>ofrecer productos de alta
+                calidad y un servicio excepcional a nuestros clientes. 
+        </h5>
+    </div>
+
+    <br><br>
+    <h2 style="font-family: 'Times New Roman', Times, serif;" class="text-center">Misión</h2>
+    <br>
+    <div style="font-family: 'Times New Roman', Times, serif;" class="text-center" >
+        <h5>
+            Nuestra misión es ser la mejor opción para comprar y vender videojuegos y tecnología,<br> 
+            ofreciendo un producto de alta calidad y un servicio de alta calidad.<br>Nuestro objetivo es satisfacer 
+            las necesidades de nuestros clientes y ayudarlos a encontrar la <br>mejor oferta en el mercado.
+        </h5>
+    </div>
+    <br>
+    <br>
+    <br>
+
+{% endblock main-content%}

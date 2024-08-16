@@ -1,0 +1,78 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Pago en Línea{% endblock title %}
+
+
+{% block main-content %}
+
+<link rel="stylesheet" href="{% static 'app/css/estilos.css' %}" />
+
+<div class="container" style="font-family: 'Times New Roman', Times, serif;">
+    <form action="">
+        <div class="row">
+            <div class="column">
+                <h3 class="title">Dirección de Envio</h3>
+                <div class="input-box">
+                    <span>Nombre completo:</span>
+                    <input type="text" placeholder="Nombre completo">
+                </div>
+                <div class="input-box">
+                    <span>Correo :</span>
+                    <input type="email" placeholder="ejemplo12@gmail.com">
+                </div>
+                <div class="input-box">
+                    <span>Dirección :</span>
+                    <input type="text" placeholder="Avenida Las Lomas">
+                </div>
+                <div class="input-box">
+                    <span>Ciudad :</span>
+                    <input type="text" placeholder="Santa Tecla">
+                </div>
+                <div class="input-box">
+                    <span>Departamento :</span>
+                    <input type="text" placeholder="San Salvador">
+                </div>
+            </div>
+        </div>
+        
+        <div class="column2">
+            <h3 class="title">Pago</h3>
+            <div class="input-box">
+                <span>Tarjetas aceptadas :</span>
+                <img src="{% static 'app/images/banner/tarjetas_credito.png' %}">
+            </div>
+            
+            <div class="input-box">
+                <span>Nombre en la tarjeta :</span>
+                <input type="text" placeholder="Mr. Juan Perez">
+            </div>
+            
+            <div class="input-box">
+                <span>Número de la tarjeta de crédito :</span>
+                <input type="number" placeholder="1111 2222 3333 4444">
+            </div>
+            
+            <div class="input-box">
+                <span>Mes de expiración :</span>
+                <input type="text" placeholder="Enero">
+            </div>
+
+            <div class="input-box">
+                <span>Año de expiración :</span>
+                <input type="number" placeholder="2029">
+            </div>
+            
+            <div class="input-box">
+                <span>CVV :</span>
+                <input type="number" placeholder="123">
+            </div>
+            
+        </div>
+        <button href="#" type="submit" class="boton">Pagar</button>
+        <br>
+        <br>
+    </form>
+</div>
+  
+{% endblock main-content %}

@@ -1,0 +1,40 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Contactanos{% endblock title %}
+
+
+{% block banner-slider %}
+
+<div id="carouselExample">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static 'app/images/banner/baner.gif' %}" class="d-block w-100" alt="banner image">
+  </div>
+</div> <!-- Este es el div que cierra el contenedor del carrusel -->
+
+{% endblock banner-slider %}
+
+
+
+{% block main-content %}
+  <div style="font-family: 'Times New Roman', Times, serif;" class="container mt-4">
+    <br>
+    <h2  class="text-center">Contactanos</h2>
+    
+    <div class="row container">
+      <h5>
+        <hr style="color: red">
+        <p class="fs-8 text-center">Facebook: vladistore</p>
+        <p class="fs-8 text-center">Instagram: @vladistoresv</p>
+        <p class="fs-8 text-center">Correo: vladistoreSV@gmail.com</p>
+        <p class="fs-8 text-center">Telefóno: 2335-6789</p>
+        <p class="fs-8 text-center">Dirección: Lourdes Colón, Metro Centro Lourdes</p>
+        <hr style="color: red">
+      </h5>  
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+{% endblock main-content %}
