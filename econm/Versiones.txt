@@ -1,0 +1,5 @@
+Python: 3.12.4
+Django: 5.0.7
+Bootstrap: 4.6.2
+Pip: 24.2
+
